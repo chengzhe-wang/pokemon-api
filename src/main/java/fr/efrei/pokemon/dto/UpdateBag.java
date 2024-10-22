@@ -7,7 +7,7 @@ public class UpdateBag {
 
     private String trainer;
 
-    private List<String> pockets;
+    private List<String> pocket;
 
     public int getCapacity() {
         return capacity;
@@ -25,11 +25,11 @@ public class UpdateBag {
         this.trainer = trainer;
     }
 
-    public List<String> getPockets() {
-        return pockets;
+    public List<String> getPocket() {
+        return pocket;
     }
 
-    public void setPockets(List<String> pockets) {
-        this.pockets = pockets;
+    public void setPocket(List<String> pocket) {
+        this.pocket = pocket;
     }
 }

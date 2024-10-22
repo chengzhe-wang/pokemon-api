@@ -81,9 +81,9 @@ public class BagService {
         }
 
         //Update Pockets
-        if(bagBody.getPockets() != null && !bagBody.getPockets().isEmpty()) {
+        if(bagBody.getPocket() != null && !bagBody.getPocket().isEmpty()) {
             List<Pocket> pocketList = new ArrayList<>();
-            List<String> pocketIds = bagBody.getPockets();
+            List<String> pocketIds = bagBody.getPocket();
             for(String pocketId : pocketIds){
                 Pocket pocket = pocketService.findById(pocketId);
                 if(pocket != null) {
