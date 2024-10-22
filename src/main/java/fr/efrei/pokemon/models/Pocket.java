@@ -2,10 +2,8 @@ package fr.efrei.pokemon.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
-public class Trainer {
+public class Pocket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -13,10 +11,10 @@ public class Trainer {
 
     private String name;
 
-    @OneToMany
-    private List<Pokemon> team;
+    private int capacity;
 
-//    @OneToOne
+//    @ManyToOne
+//    @JoinColumn(name = "bag_id")
 //    private Bag bag;
 
     public String getId() {
@@ -35,14 +33,6 @@ public class Trainer {
         this.name = name;
     }
 
-    public List<Pokemon> getTeam() {
-        return team;
-    }
-
-    public void setTeam(List<Pokemon> team) {
-        this.team = team;
-    }
-
 //    public Bag getBag() {
 //        return bag;
 //    }
@@ -50,4 +40,12 @@ public class Trainer {
 //    public void setBag(Bag bag) {
 //        this.bag = bag;
 //    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 }

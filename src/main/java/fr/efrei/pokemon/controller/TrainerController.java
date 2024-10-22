@@ -40,13 +40,13 @@ public class TrainerController
     }
 
     @PostMapping
-    public ResponseEntity<Trainer> create(@RequestBody CreateTrainer trainer){
+    public ResponseEntity<?> create(@RequestBody CreateTrainer trainer){
         service.save(trainer);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Trainer> delete(@PathVariable String id){
+    public ResponseEntity<?> delete(@PathVariable String id){
         Trainer trainer = service.findById(id);
         if(trainer == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -56,7 +56,7 @@ public class TrainerController
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Trainer> update(@PathVariable String id, @RequestBody UpdateTrainer trainerBody){
+    public ResponseEntity<?> update(@PathVariable String id, @RequestBody UpdateTrainer trainerBody){
         Trainer trainer = trainerService.findById(id);
         if(trainer == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

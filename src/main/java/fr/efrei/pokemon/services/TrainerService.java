@@ -5,6 +5,7 @@ import fr.efrei.pokemon.dto.UpdateTrainer;
 import fr.efrei.pokemon.models.Pokemon;
 import fr.efrei.pokemon.models.Trainer;
 import fr.efrei.pokemon.repositories.TrainerRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -49,6 +50,8 @@ public class TrainerService {
         repository.deleteById(id);
     }
 
+
+    @Transactional
     public void update(String id, UpdateTrainer trainerBody) {
         Trainer trainer = findById(id);
         if(trainerBody.getName() != null) {

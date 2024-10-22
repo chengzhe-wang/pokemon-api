@@ -25,7 +25,7 @@ public class PokemonController {
 
     @GetMapping
     public ResponseEntity<List<Pokemon>> findAll(){
-        return new ResponseEntity<>(service.findALl(), HttpStatus.OK);
+        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
